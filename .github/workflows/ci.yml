@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.9", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+      - run: wiki --root examples/demo-wiki check
+  mcp:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mcp: ["mcp<2", "mcp>=2"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]" "${{ matrix.mcp }}" uvicorn
+      - run: python -c "from agent_wiki import core, mcp_server; w = core.open_wiki('examples/demo-wiki'); mcp_server.make_server(w, True); print('ok')"
