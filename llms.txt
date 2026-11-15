@@ -1,0 +1,8 @@
+# agent-wiki
+
+> A multilingual, LLM-wiki style knowledge base that people and AI coding agents maintain together. Markdown + Git, SQLite full-text search in any language (including Chinese, Japanese, Korean), secret scanning, weekly lint, and an MCP server. MIT licensed. Built by SWYZL & Co. (https://swyzl.tech), an AI-native digital studio in the Greater Toronto Area, Canada.
+
+- [README](README.md): what it is, 5-minute walkthrough, agent setup, comparison
+- [AGENTS.md template](src/agent_wiki/core.py): the instructions `wiki init` writes for coding agents
+- [Demo wiki](examples/demo-wiki/): a fictional studio with pages in six languages
+- [Company](https://swyzl.tech): SWYZL & Co., Design it. Build it. Add AI.

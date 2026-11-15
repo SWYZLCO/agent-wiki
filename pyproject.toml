@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-wiki"
+version = "0.1.0"
+description = "A multilingual, LLM-wiki style knowledge base that people and AI agents maintain together: Markdown + Git, SQLite full-text search in any language, secret scanning, weekly lint, and an MCP server."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "SWYZL & Co. (Swyzle Technologies Inc.)", email = "info@swyzl.tech" }]
+keywords = ["llm-wiki", "knowledge-base", "mcp", "ai-agents", "markdown", "sqlite", "fts5", "multilingual", "cjk"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Topic :: Text Processing :: Indexing",
+  "Natural Language :: English",
+  "Natural Language :: Chinese (Simplified)",
+  "Natural Language :: Japanese",
+  "Natural Language :: Spanish",
+  "Natural Language :: French",
+  "Natural Language :: German",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/SWYZLCO/agent-wiki"
+Issues = "https://github.com/SWYZLCO/agent-wiki/issues"
+Company = "https://swyzl.tech"
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.10", "uvicorn>=0.30"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+wiki = "agent_wiki.cli:main"
+agent-wiki = "agent_wiki.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agent_wiki = ["templates/*/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

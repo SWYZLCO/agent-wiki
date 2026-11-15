@@ -1,0 +1,7 @@
+{
+  "name": "Northwind Studio (demo)",
+  "language": "en",
+  "sections": {"company": "company", "projects": "project", "lessons": "lesson", "playbooks": "playbook"},
+  "stale_days": {"project": 21, "playbook": 60, "company": 60},
+  "project_keywords": {"website": "website", "booking": "booking-app"}
+}

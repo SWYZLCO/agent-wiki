@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use agent-wiki, please cite it as below."
+title: "agent-wiki: a multilingual LLM-wiki knowledge base for people and AI agents"
+type: software
+version: 0.1.0
+date-released: 2026-11-15
+license: MIT
+repository-code: "https://github.com/SWYZLCO/agent-wiki"
+authors:
+  - name: "SWYZL & Co. (Swyzle Technologies Inc.)"
+    website: "https://swyzl.tech"
+    email: "info@swyzl.tech"
+keywords: [llm-wiki, knowledge-base, ai-agents, mcp, multilingual, sqlite]
